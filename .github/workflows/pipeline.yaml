@@ -16,9 +16,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Install StyleCop
-      run: dotnet tool install --global StyleCop.Analyzers
+      run: dotnet add package StyleCop.Analyzers --version 1.1.118
 
     - name: Build and Analyze
-      run: |
-        dotnet build EnergyApi2.sln
-        dotnet stylecop analyze EnergyApi2.csproj
+      run: dotnet build
